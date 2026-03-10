@@ -1,0 +1,194 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="#030712"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="240" height="900" fill="#0f172a"/>
+  <rect x="0" y="0" width="240" height="900" fill="url(#sidebarGrad)" opacity="0.5"/>
+  
+  <!-- Sidebar Logo -->
+  <rect x="24" y="24" width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+  <text x="64" y="46" fill="#f1f5f9" font-family="system-ui" font-size="18" font-weight="700">BookIQ</text>
+  
+  <!-- Sidebar Items -->
+  <rect x="16" y="80" width="208" height="40" rx="8" fill="#6366f1" opacity="0.15"/>
+  <text x="48" y="105" fill="#818cf8" font-family="system-ui" font-size="13" font-weight="600">Dashboard</text>
+  <text x="48" y="145" fill="#64748b" font-family="system-ui" font-size="13">Cash Flow</text>
+  <text x="48" y="177" fill="#64748b" font-family="system-ui" font-size="13">Valuation</text>
+  <text x="48" y="209" fill="#64748b" font-family="system-ui" font-size="13">P&amp;L Reports</text>
+  <text x="48" y="241" fill="#64748b" font-family="system-ui" font-size="13">Compensation</text>
+  <text x="48" y="273" fill="#64748b" font-family="system-ui" font-size="13">Entities</text>
+  
+  <!-- Main Content Area -->
+  <!-- Header -->
+  <text x="272" y="52" fill="#f1f5f9" font-family="system-ui" font-size="22" font-weight="700">Financial Overview</text>
+  <text x="272" y="74" fill="#64748b" font-family="system-ui" font-size="13">February 2026 — All entities</text>
+  
+  <!-- Stat Cards Row -->
+  <!-- Card 1: Revenue -->
+  <rect x="272" y="96" width="270" height="110" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="292" y="124" fill="#94a3b8" font-family="system-ui" font-size="12" font-weight="500">MONTHLY REVENUE</text>
+  <text x="292" y="160" fill="#f1f5f9" font-family="system-ui" font-size="28" font-weight="700">$847,200</text>
+  <text x="292" y="185" fill="#10b981" font-family="system-ui" font-size="12" font-weight="600">+12.4% vs last month</text>
+  
+  <!-- Card 2: Valuation -->
+  <rect x="558" y="96" width="270" height="110" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="578" y="124" fill="#94a3b8" font-family="system-ui" font-size="12" font-weight="500">BUSINESS VALUATION</text>
+  <text x="578" y="160" fill="#f1f5f9" font-family="system-ui" font-size="28" font-weight="700">$12.4M</text>
+  <text x="578" y="185" fill="#10b981" font-family="system-ui" font-size="12" font-weight="600">+8.2% this quarter</text>
+  
+  <!-- Card 3: Cash Runway -->
+  <rect x="844" y="96" width="270" height="110" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="864" y="124" fill="#94a3b8" font-family="system-ui" font-size="12" font-weight="500">CASH RUNWAY</text>
+  <text x="864" y="160" fill="#f1f5f9" font-family="system-ui" font-size="28" font-weight="700">14.2 mo</text>
+  <text x="864" y="185" fill="#06b6d4" font-family="system-ui" font-size="12" font-weight="600">Healthy — No action needed</text>
+  
+  <!-- Card 4: Net Profit -->
+  <rect x="1130" y="96" width="270" height="110" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="1150" y="124" fill="#94a3b8" font-family="system-ui" font-size="12" font-weight="500">NET PROFIT MARGIN</text>
+  <text x="1150" y="160" fill="#f1f5f9" font-family="system-ui" font-size="28" font-weight="700">23.8%</text>
+  <text x="1150" y="185" fill="#10b981" font-family="system-ui" font-size="12" font-weight="600">+2.1% vs last month</text>
+  
+  <!-- Cash Flow Chart Area -->
+  <rect x="272" y="228" width="556" height="320" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="292" y="260" fill="#f1f5f9" font-family="system-ui" font-size="15" font-weight="600">Cash Flow Forecast</text>
+  <text x="292" y="278" fill="#64748b" font-family="system-ui" font-size="11">90-day projection</text>
+  
+  <!-- Chart Grid Lines -->
+  <line x1="292" y1="310" x2="808" y2="310" stroke="#1e293b" stroke-width="1"/>
+  <line x1="292" y1="360" x2="808" y2="360" stroke="#1e293b" stroke-width="1"/>
+  <line x1="292" y1="410" x2="808" y2="410" stroke="#1e293b" stroke-width="1"/>
+  <line x1="292" y1="460" x2="808" y2="460" stroke="#1e293b" stroke-width="1"/>
+  <line x1="292" y1="510" x2="808" y2="510" stroke="#1e293b" stroke-width="1"/>
+  
+  <!-- Chart Area Fill -->
+  <path d="M292 460 L340 440 L388 445 L436 420 L484 400 L532 380 L580 365 L628 370 L676 350 L724 335 L772 320 L808 310 L808 510 L292 510 Z" fill="url(#chartGrad)" opacity="0.3"/>
+  
+  <!-- Chart Line -->
+  <path d="M292 460 L340 440 L388 445 L436 420 L484 400 L532 380 L580 365 L628 370 L676 350 L724 335 L772 320 L808 310" stroke="#6366f1" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Chart Dots -->
+  <circle cx="292" cy="460" r="4" fill="#6366f1"/>
+  <circle cx="436" cy="420" r="4" fill="#6366f1"/>
+  <circle cx="580" cy="365" r="4" fill="#6366f1"/>
+  <circle cx="724" cy="335" r="4" fill="#6366f1"/>
+  <circle cx="808" cy="310" r="4" fill="#6366f1"/>
+  
+  <!-- Forecast dashed -->
+  <path d="M808 310 L828 305" stroke="#6366f1" stroke-width="2" fill="none" stroke-dasharray="4 4" opacity="0.5"/>
+  
+  <!-- Y-axis labels -->
+  <text x="292" y="306" fill="#475569" font-family="system-ui" font-size="10">$2M</text>
+  <text x="292" y="356" fill="#475569" font-family="system-ui" font-size="10">$1.5M</text>
+  <text x="292" y="406" fill="#475569" font-family="system-ui" font-size="10">$1M</text>
+  <text x="292" y="456" fill="#475569" font-family="system-ui" font-size="10">$500K</text>
+  <text x="292" y="506" fill="#475569" font-family="system-ui" font-size="10">$0</text>
+  
+  <!-- Valuation Trend -->
+  <rect x="844" y="228" width="556" height="320" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="864" y="260" fill="#f1f5f9" font-family="system-ui" font-size="15" font-weight="600">Business Valuation Trend</text>
+  <text x="864" y="278" fill="#64748b" font-family="system-ui" font-size="11">12-month history</text>
+  
+  <!-- Valuation Chart -->
+  <line x1="864" y1="310" x2="1380" y2="310" stroke="#1e293b" stroke-width="1"/>
+  <line x1="864" y1="360" x2="1380" y2="360" stroke="#1e293b" stroke-width="1"/>
+  <line x1="864" y1="410" x2="1380" y2="410" stroke="#1e293b" stroke-width="1"/>
+  <line x1="864" y1="460" x2="1380" y2="460" stroke="#1e293b" stroke-width="1"/>
+  <line x1="864" y1="510" x2="1380" y2="510" stroke="#1e293b" stroke-width="1"/>
+  
+  <!-- Valuation bars -->
+  <rect x="884" y="440" width="30" height="70" rx="4" fill="#8b5cf6" opacity="0.6"/>
+  <rect x="928" y="420" width="30" height="90" rx="4" fill="#8b5cf6" opacity="0.65"/>
+  <rect x="972" y="430" width="30" height="80" rx="4" fill="#8b5cf6" opacity="0.6"/>
+  <rect x="1016" y="400" width="30" height="110" rx="4" fill="#8b5cf6" opacity="0.7"/>
+  <rect x="1060" y="390" width="30" height="120" rx="4" fill="#8b5cf6" opacity="0.7"/>
+  <rect x="1104" y="380" width="30" height="130" rx="4" fill="#8b5cf6" opacity="0.75"/>
+  <rect x="1148" y="370" width="30" height="140" rx="4" fill="#8b5cf6" opacity="0.75"/>
+  <rect x="1192" y="360" width="30" height="150" rx="4" fill="#8b5cf6" opacity="0.8"/>
+  <rect x="1236" y="345" width="30" height="165" rx="4" fill="#8b5cf6" opacity="0.8"/>
+  <rect x="1280" y="335" width="30" height="175" rx="4" fill="#8b5cf6" opacity="0.85"/>
+  <rect x="1324" y="318" width="30" height="192" rx="4" fill="#8b5cf6" opacity="0.9"/>
+  <rect x="1368" y="305" width="30" height="205" rx="4" fill="url(#barGrad)"/>
+  
+  <!-- Bottom Row -->
+  <!-- P&L Summary -->
+  <rect x="272" y="568" width="370" height="310" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="292" y="600" fill="#f1f5f9" font-family="system-ui" font-size="15" font-weight="600">P&amp;L Summary</text>
+  
+  <text x="292" y="636" fill="#94a3b8" font-family="system-ui" font-size="12">Revenue</text>
+  <text x="600" y="636" fill="#f1f5f9" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">$847,200</text>
+  <line x1="292" y1="648" x2="622" y2="648" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="292" y="668" fill="#94a3b8" font-family="system-ui" font-size="12">COGS</text>
+  <text x="600" y="668" fill="#ef4444" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">-$312,400</text>
+  <line x1="292" y1="680" x2="622" y2="680" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="292" y="700" fill="#94a3b8" font-family="system-ui" font-size="12">Gross Profit</text>
+  <text x="600" y="700" fill="#10b981" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">$534,800</text>
+  <line x1="292" y1="712" x2="622" y2="712" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="292" y="732" fill="#94a3b8" font-family="system-ui" font-size="12">Operating Expenses</text>
+  <text x="600" y="732" fill="#ef4444" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">-$332,200</text>
+  <line x1="292" y1="744" x2="622" y2="744" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="292" y="768" fill="#f1f5f9" font-family="system-ui" font-size="14" font-weight="700">Net Profit</text>
+  <text x="600" y="768" fill="#10b981" font-family="system-ui" font-size="14" font-weight="700" text-anchor="end">$201,600</text>
+  
+  <!-- Owner Compensation -->
+  <rect x="658" y="568" width="370" height="310" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="678" y="600" fill="#f1f5f9" font-family="system-ui" font-size="15" font-weight="600">Owner Compensation</text>
+  
+  <text x="678" y="636" fill="#94a3b8" font-family="system-ui" font-size="12">Base Salary</text>
+  <text x="988" y="636" fill="#f1f5f9" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">$180,000/yr</text>
+  <line x1="678" y1="648" x2="1008" y2="648" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="678" y="668" fill="#94a3b8" font-family="system-ui" font-size="12">Distributions (YTD)</text>
+  <text x="988" y="668" fill="#06b6d4" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">$95,000</text>
+  <line x1="678" y1="680" x2="1008" y2="680" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="678" y="700" fill="#94a3b8" font-family="system-ui" font-size="12">Tax Efficiency Score</text>
+  <text x="988" y="700" fill="#10b981" font-family="system-ui" font-size="12" font-weight="600" text-anchor="end">92/100</text>
+  <line x1="678" y1="712" x2="1008" y2="712" stroke="#1e293b" stroke-width="1"/>
+  
+  <text x="678" y="736" fill="#94a3b8" font-family="system-ui" font-size="11">Recommended: Increase Q2 distributions by $25K</text>
+  
+  <!-- Entities -->
+  <rect x="1044" y="568" width="356" height="310" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="1064" y="600" fill="#f1f5f9" font-family="system-ui" font-size="15" font-weight="600">Entity Performance</text>
+  
+  <rect x="1064" y="616" width="316" height="50" rx="8" fill="#1e293b" opacity="0.5"/>
+  <text x="1080" y="638" fill="#f1f5f9" font-family="system-ui" font-size="12" font-weight="600">Main LLC</text>
+  <text x="1080" y="654" fill="#10b981" font-family="system-ui" font-size="11">$612K revenue • 26% margin</text>
+  
+  <rect x="1064" y="676" width="316" height="50" rx="8" fill="#1e293b" opacity="0.5"/>
+  <text x="1080" y="698" fill="#f1f5f9" font-family="system-ui" font-size="12" font-weight="600">Holdings Inc</text>
+  <text x="1080" y="714" fill="#06b6d4" font-family="system-ui" font-size="11">$158K revenue • 18% margin</text>
+  
+  <rect x="1064" y="736" width="316" height="50" rx="8" fill="#1e293b" opacity="0.5"/>
+  <text x="1080" y="758" fill="#f1f5f9" font-family="system-ui" font-size="12" font-weight="600">RE Ventures</text>
+  <text x="1080" y="774" fill="#8b5cf6" font-family="system-ui" font-size="11">$77K revenue • 31% margin</text>
+  
+  <!-- CFO Insight Badge -->
+  <rect x="1064" y="800" width="316" height="48" rx="8" fill="#6366f1" opacity="0.1" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="1080" y="820" fill="#818cf8" font-family="system-ui" font-size="11" font-weight="600">CFO Insight:</text>
+  <text x="1080" y="836" fill="#94a3b8" font-family="system-ui" font-size="10">Consolidate RE into Holdings for $18K tax savings</text>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="sidebarGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+</svg>
