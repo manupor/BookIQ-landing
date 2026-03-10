@@ -142,7 +142,7 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
             <img
               src="/book-iq-logo.png"
               alt="BookIQ"
-              className="h-8 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-110"
+              className="h-11 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-110"
             />
           </a>
 
@@ -231,8 +231,8 @@ function HeroSection() {
               numbers, grow
               <br />
               your <span style={{
-                color: '#00ff97',
-                textShadow: '0 0 40px rgba(0,255,151,0.5)'
+                color: '#4a9eff',
+                textShadow: '0 0 15px rgba(74, 158, 255, 0.2)'
               }}>business</span>
             </motion.h1>
 
@@ -256,7 +256,7 @@ function HeroSection() {
                 fontSize: '11px',
                 letterSpacing: '0.15em',
                 padding: '1.1rem 2rem',
-                boxShadow: '0 0 40px rgba(0,255,151,0.35), 0 10px 30px rgba(0,255,151,0.2)'
+                boxShadow: '0 0 20px rgba(74, 158, 255, 0.15), 0 8px 24px rgba(74, 158, 255, 0.1)'
               }}>
                 <span className="font-black uppercase">Begin Today With Us</span>
                 <span className="arrow-icon" style={{ width: '2.2rem', height: '2.2rem' }}>
@@ -304,13 +304,13 @@ function HeroSection() {
               {/* Icon with glow orb background */}
               <div style={{
                 width: '56px', height: '56px',
-                background: 'linear-gradient(135deg, rgba(0,255,151,0.15), rgba(0,100,200,0.15))',
+                background: 'linear-gradient(135deg, rgba(74, 158, 255, 0.08), rgba(0,100,200,0.08))',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '1rem',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 marginBottom: '1.5rem',
-                color: '#00ff97',
-                boxShadow: '0 0 20px rgba(0,255,151,0.15)'
+                color: '#4a9eff',
+                boxShadow: '0 0 10px rgba(74, 158, 255, 0.1)'
               }}>
                 {feature.icon}
               </div>
@@ -318,7 +318,7 @@ function HeroSection() {
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>{feature.desc}</p>
               {/* Hover glow border */}
               <div className="absolute inset-0 rounded-[1.25rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-                boxShadow: 'inset 0 0 0 1px rgba(0,255,151,0.2)'
+                boxShadow: 'inset 0 0 0 1px rgba(74, 158, 255, 0.1)'
               }} />
             </motion.div>
           ))}
@@ -567,7 +567,7 @@ function HowItWorksSection() {
             <AnimatedSection key={s.title} delay={i * 0.2}>
               <div className="relative text-center group">
                 <div className="mx-auto mb-10 relative">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary border border-primary/20 shadow-[0_0_30px_rgba(0,255,151,0.1)] group-hover:scale-110 transition-transform duration-500">
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary border border-primary/20 shadow-[0_0_15px_rgba(74, 158, 255, 0.05)] group-hover:scale-110 transition-transform duration-500">
                     {s.icon}
                   </div>
                   <span className="absolute -top-3 -right-3 flex h-10 w-10 items-center justify-center rounded-full bg-background border-2 border-primary text-sm font-black italic text-primary shadow-xl">
@@ -603,7 +603,7 @@ function AivoraServicesSection() {
       title: "Accurate Monthly Financials",
       desc: "Professional-grade P&L, balance sheets, and cash flow statements you can present to investors, lenders, or buyers with full confidence.",
       icon: <FileCheck className="h-7 w-7" />,
-      color: "#00ff97",
+      color: "#4a9eff",
     },
     {
       title: "Cash Flow Forecasts",
@@ -621,7 +621,7 @@ function AivoraServicesSection() {
       title: "Owner Compensation Strategy",
       desc: "Optimize your salary, distributions, and benefits structure for maximum tax efficiency and personal financial health tailored to your business.",
       icon: <DollarSign className="h-7 w-7" />,
-      color: "#00ff97",
+      color: "#4a9eff",
     },
     {
       title: "Multi-Entity Support",
@@ -641,12 +641,12 @@ function AivoraServicesSection() {
     <section id="services" className="relative overflow-hidden" style={{ background: '#00020f' }}>
       {/* Header above the tabs */}
       <div className="relative z-10 pt-24 pb-12 px-8 lg:px-16 text-center">
-        <p className="text-xs font-black uppercase tracking-[0.3em] mb-4" style={{ color: '#00ff97' }}>
+        <p className="text-xs font-black uppercase tracking-[0.3em] mb-4" style={{ color: '#4a9eff' }}>
           What&apos;s Included
         </p>
         <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-4">
           Everything You Need for{" "}
-          <span style={{ color: '#00ff97', textShadow: '0 0 30px rgba(0,255,151,0.4)' }}>
+          <span style={{ color: '#4a9eff', textShadow: '0 0 15px rgba(74, 158, 255, 0.2)' }}>
             Financial Clarity
           </span>
         </h2>
@@ -674,7 +674,7 @@ function AivoraServicesSection() {
               style={{
                 borderRight: idx < services.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
                 background: isActive
-                  ? 'linear-gradient(135deg, rgba(0,255,151,0.05) 0%, rgba(0,5,20,0.95) 100%)'
+                  ? 'linear-gradient(135deg, rgba(74, 158, 255, 0.03) 0%, rgba(0,5,20,0.95) 100%)'
                   : 'rgba(0,2,15,0.9)',
               }}
             >
@@ -732,10 +732,10 @@ function AivoraServicesSection() {
                     <div
                       style={{
                         width: '48px', height: '48px', flexShrink: 0,
-                        background: '#00ff97',
+                        background: '#4a9eff',
                         borderRadius: '50%',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        boxShadow: '0 0 20px rgba(0,255,151,0.4)',
+                        boxShadow: '0 0 10px rgba(74, 158, 255, 0.2)',
                       }}
                     >
                       <ArrowUpRight style={{ width: '20px', height: '20px', color: '#000' }} />
@@ -745,7 +745,7 @@ function AivoraServicesSection() {
                   {/* Bottom: icon badge */}
                   <div style={{
                     width: '64px', height: '64px',
-                    background: 'linear-gradient(135deg, rgba(0,255,151,0.15), rgba(0,100,200,0.1))',
+                    background: 'linear-gradient(135deg, rgba(74, 158, 255, 0.08), rgba(0,100,200,0.05))',
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '1rem',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -794,14 +794,14 @@ function AivoraServicesSection() {
             disabled={activeIdx === services.length - 1}
             style={{
               width: '42px', height: '42px',
-              background: activeIdx === services.length - 1 ? 'rgba(255,255,255,0.03)' : '#00ff97',
+              background: activeIdx === services.length - 1 ? 'rgba(255,255,255,0.03)' : '#4a9eff',
               border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '50%',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: activeIdx === services.length - 1 ? 'rgba(255,255,255,0.2)' : '#000',
               cursor: activeIdx === services.length - 1 ? 'not-allowed' : 'pointer',
               transition: 'all 0.2s',
-              boxShadow: activeIdx === services.length - 1 ? 'none' : '0 0 15px rgba(0,255,151,0.3)',
+              boxShadow: activeIdx === services.length - 1 ? 'none' : '0 0 8px rgba(74, 158, 255, 0.15)',
             }}
           >
             <ArrowRight style={{ width: '16px', height: '16px' }} />
@@ -921,7 +921,7 @@ function WhyUsSection() {
         <AnimatedSection delay={0.5}>
           <div className="aivora-glass mx-auto max-w-4xl p-12 text-center border-primary/20 bg-primary/[0.02]">
             <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
-              <Heart className="h-8 w-8 text-primary shadow-[0_0_20px_rgba(0,255,151,0.3)]" />
+              <Heart className="h-8 w-8 text-primary shadow-[0_0_10px_rgba(74, 158, 255, 0.15)]" />
             </div>
             <blockquote className="text-2xl sm:text-3xl font-black tracking-tight leading-relaxed text-foreground italic">
               &ldquo;Finally, financial reports I can actually trust to make big decisions. BookIQ gave me the confidence to expand into two new markets.&rdquo;
@@ -993,7 +993,7 @@ function PricingSection() {
                 ))}
               </div>
 
-              <a href="#join" className="aivora-btn w-full justify-center group py-5 shadow-[0_20px_40px_rgba(0,255,151,0.2)]">
+              <a href="#join" className="aivora-btn w-full justify-center group py-5 shadow-[0_12px_24px_rgba(74, 158, 255, 0.1)]">
                 <span className="text-sm font-black uppercase tracking-widest leading-none">Get Started Today</span>
                 <span className="arrow-icon">
                   <ArrowUpRight className="h-5 w-5" />
@@ -1027,7 +1027,7 @@ function Footer() {
             <img
               src="/book-iq-logo.png"
               alt="BookIQ"
-              className="h-6 w-auto brightness-0 invert opacity-80"
+              className="h-8 w-auto brightness-0 invert opacity-80"
             />
           </div>
           <p className="text-sm text-muted-foreground font-medium">
