@@ -142,7 +142,7 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
             <img
               src="/book-iq-logo.png"
               alt="BookIQ"
-              className="h-11 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-110"
+              className="h-12 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-110"
             />
           </a>
 
