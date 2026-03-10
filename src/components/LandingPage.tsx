@@ -142,7 +142,7 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
             <img
               src="/book-iq-logo.png"
               alt="BookIQ"
-              className="h-12 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-110"
+              className="h-16 w-auto brightness-0 invert transition-transform duration-300 group-hover:scale-110"
             />
           </a>
 
@@ -167,7 +167,7 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
             <a
               href="#join"
-              className="hidden sm:flex aivora-btn py-3.5 px-8"
+              className="hidden sm:flex aivora-btn"
               style={{ fontSize: '11px', letterSpacing: '0.15em' }}
             >
               <span className="font-black uppercase">Join Now</span>
@@ -253,9 +253,8 @@ function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <a href="#join" className="aivora-btn" style={{
-                fontSize: '11px',
-                letterSpacing: '0.15em',
-                padding: '1.1rem 2rem',
+                fontSize: '10px',
+                letterSpacing: '0.12em',
                 boxShadow: '0 0 20px rgba(74, 158, 255, 0.15), 0 8px 24px rgba(74, 158, 255, 0.1)'
               }}>
                 <span className="font-black uppercase">Begin Today With Us</span>
@@ -993,7 +992,7 @@ function PricingSection() {
                 ))}
               </div>
 
-              <a href="#join" className="aivora-btn w-full justify-center group py-5 shadow-[0_12px_24px_rgba(74, 158, 255, 0.1)]">
+              <a href="#join" className="aivora-btn w-full justify-center group py-2 px-4">
                 <span className="text-sm font-black uppercase tracking-widest leading-none">Get Started Today</span>
                 <span className="arrow-icon">
                   <ArrowUpRight className="h-5 w-5" />
@@ -1027,7 +1026,7 @@ function Footer() {
             <img
               src="/book-iq-logo.png"
               alt="BookIQ"
-              className="h-8 w-auto brightness-0 invert opacity-80"
+              className="h-14 w-auto brightness-0 invert opacity-80"
             />
           </div>
           <p className="text-sm text-muted-foreground font-medium">

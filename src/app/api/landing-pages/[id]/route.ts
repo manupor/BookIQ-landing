@@ -15,9 +15,10 @@ const updateSchema = z.object({
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {
@@ -29,7 +30,7 @@ export async function GET(
 
     const landingPage = await prisma.landingPage.findUnique({
       where: {
-        id: params.id,
+        id: id,
         userId: session.user.id
       }
     })
@@ -52,9 +53,10 @@ export async function GET(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {
@@ -69,7 +71,7 @@ export async function PATCH(
 
     const existingPage = await prisma.landingPage.findUnique({
       where: {
-        id: params.id,
+        id: id,
       }
     })
 
@@ -102,7 +104,7 @@ export async function PATCH(
 
     const landingPage = await prisma.landingPage.update({
       where: {
-        id: params.id,
+        id: id,
       },
       data,
     })
@@ -125,9 +127,10 @@ export async function PATCH(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params
     const session = await getServerSession(authOptions)
 
     if (!session?.user?.id) {
@@ -139,7 +142,7 @@ export async function DELETE(
 
     const existingPage = await prisma.landingPage.findUnique({
       where: {
-        id: params.id,
+        id: id,
       }
     })
 
@@ -159,7 +162,7 @@ export async function DELETE(
 
     await prisma.landingPage.delete({
       where: {
-        id: params.id,
+        id: id,
       }
     })
 
