@@ -9,7 +9,8 @@
     "dev:8080": "next dev --hostname 0.0.0.0 --port 8080 --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
