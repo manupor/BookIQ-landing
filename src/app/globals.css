@@ -53,28 +53,28 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #00020f;
+  --foreground: #0f172a;
   --card: #f8fafc;
-  --card-foreground: #00020f;
+  --card-foreground: #0f172a;
   --popover: #ffffff;
-  --popover-foreground: #00020f;
-  --primary: #4a9eff;
-  --primary-foreground: #00020f;
+  --popover-foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
-  --secondary-foreground: #00020f;
+  --secondary-foreground: #0f172a;
   --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --muted-foreground: #334155;
   --accent: #f1f5f9;
-  --accent-foreground: #00020f;
+  --accent-foreground: #0f172a;
   --destructive: #ef4444;
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #4a9eff;
+  --ring: #2563eb;
 
   --grid-color: rgba(99, 102, 241, 0.08);
   --section-num-color: rgba(3, 7, 18, 0.04);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(3, 7, 18, 0.08);
+  --glass-bg: rgba(248, 250, 252, 0.98);
+  --glass-border: rgba(15, 23, 42, 0.15);
 }
 
 .dark {
@@ -84,20 +84,20 @@
   --card-foreground: #f1f5f9;
   --popover: #0b0e1a;
   --popover-foreground: #f1f5f9;
-  --primary: #4a9eff;
+  --primary: #38485c;
   --primary-foreground: #ffffff;
   --secondary: #12182b;
   --secondary-foreground: #f1f5f9;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #4a9eff;
+  --accent: #38485c;
   --accent-foreground: #00020f;
   --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.06);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #4a9eff;
+  --ring: #38485c;
 
-  --grid-color: rgba(74, 158, 255, 0.03);
+  --grid-color: rgba(56, 72, 92, 0.03);
   --section-num-color: rgba(255, 255, 255, 0.03);
   --glass-bg: rgba(11, 14, 26, 0.8);
   --glass-border: rgba(255, 255, 255, 0.06);
@@ -118,7 +118,7 @@ html {
    GRADIENT TEXT
    ═══════════════════════════════════════════════════ */
 .gradient-text {
-  background: linear-gradient(135deg, #4a9eff 0%, #00d2ff 100%);
+  background: linear-gradient(135deg, #38485c 0%, #5a7a9e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -573,29 +573,132 @@ html {
 
 :root {
   --background: #ffffff;
-  --foreground: #00020f;
-  --primary-glow: rgba(74, 158, 255, 0.1);
+  --foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.15);
+}
+
+/* ─── Scroll Snap for Aveni-style scrolling ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Stacking Cards Effect */
+.stack-container {
+  position: relative;
+}
+
+.stack-card {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  will-change: transform;
+}
+
+/* Staggered z-index for stacking effect */
+.stack-card:nth-child(1) { z-index: 1; }
+.stack-card:nth-child(2) { z-index: 2; }
+.stack-card:nth-child(3) { z-index: 3; }
+.stack-card:nth-child(4) { z-index: 4; }
+.stack-card:nth-child(5) { z-index: 5; }
+.stack-card:nth-child(6) { z-index: 6; }
+.stack-card:nth-child(7) { z-index: 7; }
+.stack-card:nth-child(8) { z-index: 8; }
+.stack-card:nth-child(9) { z-index: 9; }
+.stack-card:nth-child(10) { z-index: 10; }
+
+/* Card shadow for depth effect */
+.stack-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.stack-card.stacked::after {
+  opacity: 1;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+}
+
+/* Parallax and fade animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children animations */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+/* Section reveal animation */
+.section-reveal {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .dark {
   --background: #00020f;
   /* Deep Midnight */
   --foreground: #ffffff;
-  --primary: #4a9eff;
-  --primary-glow: rgba(74, 158, 255, 0.2);
+  --primary: #38485c;
+  --primary-glow: rgba(56, 72, 92, 0.2);
 }
 
 .aivora-glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(248, 250, 252, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.15);
   border-radius: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 .dark .aivora-glass {
   background: rgba(0, 2, 15, 0.4);
   border: 1px solid rgba(74, 158, 255, 0.08);
+  box-shadow: none;
 }
 
 .aivora-btn {
@@ -604,7 +707,7 @@ html {
   gap: 1rem;
   padding: 1.25rem 2.5rem;
   background: var(--primary);
-  color: #00020f;
+  color: #ffffff;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
