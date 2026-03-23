@@ -75,6 +75,7 @@
   --section-num-color: rgba(3, 7, 18, 0.04);
   --glass-bg: rgba(248, 250, 252, 0.98);
   --glass-border: rgba(15, 23, 42, 0.15);
+  --logo-filter: brightness(0);
 }
 
 .dark {
@@ -101,6 +102,7 @@
   --section-num-color: rgba(255, 255, 255, 0.03);
   --glass-bg: rgba(11, 14, 26, 0.8);
   --glass-border: rgba(255, 255, 255, 0.06);
+  --logo-filter: none;
 }
 
 body {
@@ -783,4 +785,5 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-right: 0.12em;
 }

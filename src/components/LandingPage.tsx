@@ -46,9 +46,9 @@ import AnimatedSection from "./AnimatedSection";
 import dynamic from "next/dynamic";
 import { Sun, Moon } from "lucide-react";
 
-const DarkVeil = dynamic(() => import("./DarkVeil"), {
+const Grainient = dynamic(() => import("./Grainient"), {
   ssr: false,
-  loading: () => <div className="absolute inset-0 z-0 bg-background" />,
+  loading: () => <div className="fixed inset-0 z-0" style={{ background: '#0d1520' }} />,
 });
 
 /* ─── UI Decorations ─── */
@@ -96,9 +96,10 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
           {/* Logo */}
           <a href="#" className="flex items-center group flex-shrink-0">
             <img
-              src="/Book IQ Logo_long_WHITE.png"
+              src="/Book-IQ-Logo_long_WHITE.png"
               alt="BookIQ"
               className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+              style={{ filter: 'var(--logo-filter)' }}
             />
           </a>
 
@@ -144,27 +145,7 @@ function Navbar({ theme, toggleTheme }: { theme: string; toggleTheme: () => void
 /* ─── Hero Section ─── */
 function HeroSection({ theme }: { theme: string }) {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: '#00020f' }}>
-      {/* DarkVeil animated background */}
-      <div className="absolute inset-0 pointer-events-none z-0" aria-hidden>
-        <DarkVeil
-          hueShift={200}
-          noiseIntensity={0}
-          scanlineIntensity={0}
-          speed={0.5}
-          scanlineFrequency={0}
-          warpAmount={0}
-        />
-        {/* Dark overlay to keep text readable */}
-        <div className="absolute inset-0" style={{
-          background: 'linear-gradient(135deg, rgba(0,2,15,0.6) 30%, rgba(0,2,15,0.75) 100%)',
-        }} />
-        {/* Bottom fade to solid background */}
-        <div className="absolute bottom-0 left-0 right-0 h-48" style={{
-          background: 'linear-gradient(to bottom, transparent, #00020f)',
-        }} />
-      </div>
-
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
       {/* Main Hero Content */}
       <div className="container mx-auto px-8 lg:px-16 relative z-20 pt-36 pb-0">
@@ -176,14 +157,11 @@ function HeroSection({ theme }: { theme: string }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="font-black leading-[0.9] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(3rem, 7vw, 6.5rem)', color: theme === 'dark' ? '#ffffff' : '#00020f' }}
+              style={{ fontSize: 'clamp(2.2rem, 5vw, 4.5rem)', color: '#ffffff' }}
             >
               Know Your Numbers,
               <br />
-              Know Your <span style={{
-                color: '#38485c',
-                textShadow: '0 0 15px rgba(56, 72, 92, 0.2)'
-              }}>Business</span>
+              Know Your <span style={{ color: '#ffffff' }}>Business</span>
             </motion.h1>
 
             <motion.p
@@ -201,11 +179,7 @@ function HeroSection({ theme }: { theme: string }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <a href="#join" className="aivora-btn" style={{
-                fontSize: '10px',
-                letterSpacing: '0.12em',
-                boxShadow: '0 0 20px rgba(56, 72, 92, 0.15), 0 8px 24px rgba(56, 72, 92, 0.1)'
-              }}>
+              <a href="#join" className="aivora-btn" style={{ fontSize: '10px', letterSpacing: '0.12em', boxShadow: '0 0 20px rgba(56, 72, 92, 0.15), 0 8px 24px rgba(56, 72, 92, 0.1)' }}>
                 <span className="font-black uppercase">Begin Today</span>
                 <span className="arrow-icon" style={{ width: '2.2rem', height: '2.2rem' }}>
                   <ArrowUpRight className="h-4 w-4" />
@@ -214,42 +188,64 @@ function HeroSection({ theme }: { theme: string }) {
             </motion.div>
           </div>
 
-          {/* Right: Laptop Mockup */}
+          {/* Right: Video */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="hidden lg:block relative z-30"
-            style={{ maxWidth: '1100px' }}
           >
-            <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative"
-            >
-              {/* Glow effect behind laptop */}
+            <div className="relative">
               <div className="absolute inset-0 blur-3xl opacity-30" style={{
                 background: 'radial-gradient(circle, rgba(56, 72, 92, 0.4) 0%, transparent 70%)',
                 transform: 'scale(1.4)',
               }} />
-              
-              {/* Laptop image */}
-              <img
-                src="/Laptop-BOOKIQ-Mockup.png"
-                alt="BookIQ Dashboard"
-                className="relative z-10 w-full h-auto drop-shadow-2xl"
-                style={{
-                  filter: 'drop-shadow(0 20px 60px rgba(56, 72, 92, 0.3))',
-                  transform: 'scale(1.45)',
-                }}
-              />
-            </motion.div>
+              <div style={{ perspective: '1200px' }}>
+                <div
+                  className="relative z-10 overflow-hidden"
+                  style={{
+                    borderRadius: '0.875rem',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    boxShadow: '0 50px 100px rgba(0,0,0,0.7), 0 20px 40px rgba(0,0,0,0.5), 0 0 60px rgba(56, 72, 92, 0.25)',
+                  }}
+                >
+                  {/* macOS window title bar */}
+                  <div
+                    style={{
+                      background: 'linear-gradient(to bottom, #2a2a2e, #1e1e22)',
+                      borderBottom: '1px solid rgba(255,255,255,0.06)',
+                      padding: '10px 14px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                    }}
+                  >
+                    {/* Traffic lights */}
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f57', boxShadow: '0 0 4px rgba(255,95,87,0.5)' }} />
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#febc2e', boxShadow: '0 0 4px rgba(254,188,46,0.5)' }} />
+                    <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#28c840', boxShadow: '0 0 4px rgba(40,200,64,0.5)' }} />
+                    {/* Fake URL bar */}
+                    <div style={{
+                      flex: 1,
+                      marginLeft: '10px',
+                      background: 'rgba(255,255,255,0.06)',
+                      borderRadius: '6px',
+                      padding: '3px 12px',
+                      fontSize: '11px',
+                      color: 'rgba(255,255,255,0.3)',
+                      textAlign: 'center',
+                      letterSpacing: '0.02em',
+                    }}>
+                      app.bookiq.ai
+                    </div>
+                  </div>
+                  {/* Video content */}
+                  <video autoPlay muted loop playsInline className="w-full h-auto block">
+                    <source src="/BOOKIQ.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -258,65 +254,27 @@ function HeroSection({ theme }: { theme: string }) {
       <div className="container mx-auto px-8 lg:px-16 relative z-10 pb-10 mt-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            {
-              title: "Smarter insights",
-              desc: "Make faster, data-driven decisions powered by real-time financial analysis and multi-source predictions.",
-              icon: <Zap className="h-7 w-7" />,
-            },
-            {
-              title: "Integrated solutions",
-              desc: "No extra tools or plugins needed. Get built-in, scalable financial intelligence from day one.",
-              icon: <LayoutGrid className="h-7 w-7" />,
-            },
-            {
-              title: "End-to-end automation",
-              desc: "Eliminate bottlenecks with intelligent workflows that never leave you guessing about your businesses financials.",
-              icon: <Workflow className="h-7 w-7" />,
-            },
+            { title: "Smarter insights", desc: "Make faster, data-driven decisions powered by real-time financial analysis and multi-source predictions.", icon: <Zap className="h-7 w-7" /> },
+            { title: "Integrated solutions", desc: "No extra tools or plugins needed. Get built-in, scalable financial intelligence from day one.", icon: <LayoutGrid className="h-7 w-7" /> },
+            { title: "End-to-end automation", desc: "Eliminate bottlenecks with intelligent workflows that never leave you guessing about your businesses financials.", icon: <Workflow className="h-7 w-7" /> },
           ].map((feature, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="aivora-glass group p-6 hover:border-primary/40 transition-all duration-500"
-              style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.07)',
-                borderRadius: '1.25rem',
-                backdropFilter: 'blur(20px)',
-              }}
+              className="group p-6 relative"
+              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '1.25rem', backdropFilter: 'blur(20px)' }}
             >
-              {/* Icon with glow orb background */}
-              <div style={{
-                width: '56px', height: '56px',
-                background: 'linear-gradient(135deg, rgba(56, 72, 92, 0.08), rgba(0,100,200,0.08))',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '1rem',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                marginBottom: '1.5rem',
-                color: '#38485c',
-                boxShadow: '0 0 10px rgba(56, 72, 92, 0.1)'
-              }}>
+              <div style={{ width: '56px', height: '56px', background: 'linear-gradient(135deg, rgba(56, 72, 92, 0.08), rgba(0,100,200,0.08))', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: '#38485c' }}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-black mb-3 tracking-tight" style={{ color: theme === 'dark' ? '#ffffff' : '#00020f' }}>{feature.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: theme === 'dark' ? 'rgba(255,255,255,0.45)' : 'rgba(0,2,15,0.65)' }}>{feature.desc}</p>
-              {/* Hover glow border */}
-              <div className="absolute inset-0 rounded-[1.25rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
-                boxShadow: 'inset 0 0 0 1px rgba(56, 72, 92, 0.1)'
-              }} />
+              <h3 className="text-xl font-black mb-3 tracking-tight" style={{ color: '#ffffff' }}>{feature.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>{feature.desc}</p>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 0.6; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.05); }
-        }
-      `}</style>
     </section>
   );
 }
@@ -343,7 +301,7 @@ function QuestionsSection() {
   ];
 
   return (
-    <section id="questions" className="relative py-32 overflow-hidden bg-background">
+    <section id="questions" className="relative py-32 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <AnimatedSection className="text-center mb-20">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 italic">
@@ -407,7 +365,7 @@ function PainPointsSection() {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden bg-background">
+    <section className="relative py-32 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <AnimatedSection className="text-center mb-16">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 italic">
@@ -470,7 +428,7 @@ function WhyBookIQSection() {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden bg-background">
+    <section className="relative py-32 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <AnimatedSection className="text-center mb-16">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 italic">
@@ -526,7 +484,7 @@ function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="relative py-32 overflow-hidden bg-background">
+    <section id="how-it-works" className="relative py-32 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <AnimatedSection className="text-center mb-20">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 italic">
@@ -608,7 +566,7 @@ function AivoraServicesSection() {
   ];
 
   return (
-    <section id="services" className="relative overflow-hidden" style={{ background: '#00020f' }}>
+    <section id="services" className="relative overflow-hidden">
       {/* Header above the tabs */}
       <div className="relative z-10 pt-24 pb-12 px-8 lg:px-16 text-center">
         <p className="text-xs font-black uppercase tracking-[0.3em] mb-4" style={{ color: '#38485c' }}>
@@ -834,12 +792,11 @@ function WhatYouWantSection() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative bg-background"
+      className="relative"
       style={{ height: '400vh' }}
     >
       <div 
         className="sticky top-0 h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
-        style={{ background: 'var(--background)' }}
       >
         {/* Header */}
         <div className="text-center mb-12 flex-shrink-0">
@@ -853,18 +810,31 @@ function WhatYouWantSection() {
         </div>
 
         {/* Cards - all stacked at same position, one visible at a time */}
-        <div className="relative w-full max-w-3xl flex-shrink-0" style={{ height: '320px' }}>
+        <div className="relative w-full max-w-3xl flex-shrink-0" style={{ height: '320px', perspective: '1000px' }}>
           {wants.map((w, i) => (
             <motion.div
               key={w.title}
               className="absolute inset-0"
               animate={{ 
-                y: i < cardIndex ? -80 : i === cardIndex ? 0 : 80,
-                opacity: i === cardIndex ? 1 : i < cardIndex ? 0 : 0,
-                scale: i === cardIndex ? 1 : 0.96,
+                y: i < cardIndex
+                  ? -12 * (cardIndex - i)
+                  : i === cardIndex
+                  ? 0
+                  : 80,
+                scale: i < cardIndex
+                  ? 1 - 0.06 * (cardIndex - i)
+                  : i === cardIndex
+                  ? 1
+                  : 0.92,
+                opacity: i < cardIndex
+                  ? Math.max(0, 1 - 0.35 * (cardIndex - i))
+                  : i === cardIndex
+                  ? 1
+                  : 0,
+                rotateX: i === cardIndex ? 0 : i > cardIndex ? 8 : 0,
               }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              style={{ zIndex: i === cardIndex ? 10 : 0 }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              style={{ zIndex: i === cardIndex ? 10 : 10 - (cardIndex - i), transformStyle: 'preserve-3d' }}
             >
               <div 
                 className="h-full p-10 lg:p-12"
@@ -878,8 +848,8 @@ function WhatYouWantSection() {
                 <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center mb-6 border border-primary/30 text-primary">
                   {w.icon}
                 </div>
-                <h3 className="mb-3 text-3xl font-black tracking-tighter text-foreground">{w.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-base opacity-90">{w.text}</p>
+                <h3 className="mb-3 text-3xl font-black tracking-tighter" style={{ color: '#ffffff' }}>{w.title}</h3>
+                <p className="leading-relaxed text-base opacity-90" style={{ color: 'rgba(255,255,255,0.65)' }}>{w.text}</p>
               </div>
             </motion.div>
           ))}
@@ -925,7 +895,7 @@ function WhyUsSection() {
   ];
 
   return (
-    <section id="why-us" className="relative py-32 overflow-hidden bg-background">
+    <section id="why-us" className="relative py-32 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <AnimatedSection className="text-center mb-16">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 italic">
@@ -988,13 +958,13 @@ function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="relative py-32 overflow-hidden bg-background">
+    <section id="pricing" className="relative py-32">
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <AnimatedSection className="text-center mb-16">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6 italic">
             Simple Effortless, Transparent Pricing
           </p>
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight mb-8">
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight mb-8 pr-2">
             Tailored <span className="gradient-text italic">Intelligence</span>
           </h2>
         </AnimatedSection>
@@ -1060,9 +1030,10 @@ function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2.5">
             <img
-              src="/Book IQ Logo_long_WHITE.png"
+              src="/Book-IQ-Logo_long_WHITE.png"
               alt="BookIQ"
               className="h-10 w-auto opacity-80"
+              style={{ filter: 'var(--logo-filter)' }}
             />
           </div>
           <p className="text-sm text-muted-foreground font-medium">
@@ -1103,7 +1074,34 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="noise-overlay bg-background transition-colors duration-300">
+    <div className="noise-overlay transition-colors duration-300" style={{ background: 'transparent' }}>
+      {/* Fixed full-page Grainient background */}
+      <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden>
+        <Grainient
+          color1="#38485c"
+          color2="#050d1a"
+          color3="#00020f"
+          timeSpeed={0.25}
+          colorBalance={0}
+          warpStrength={1}
+          warpFrequency={5}
+          warpSpeed={2}
+          warpAmplitude={50}
+          blendAngle={0}
+          blendSoftness={0.05}
+          rotationAmount={500}
+          noiseScale={2}
+          grainAmount={0.1}
+          grainScale={2}
+          grainAnimated={false}
+          contrast={1.5}
+          gamma={1}
+          saturation={1}
+          centerX={0}
+          centerY={0}
+          zoom={0.9}
+        />
+      </div>
       <div className="relative z-10">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <HeroSection theme={theme} />
