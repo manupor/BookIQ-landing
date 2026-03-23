@@ -559,6 +559,7 @@ function AivoraServicesSection() {
     },
     {
       title: "Monthly Q-Score - Business Valuation Health Rating",
+      verticalLines: ["Monthly Q-Score", "Business Valuation Health Rating"],
       desc: "Track your businesses overall wellness and value, over time, and understand the key drivers that impact your potential exit price or overall business valuation.",
       icon: <BarChart3 className="h-7 w-7" />,
       color: "#00e5ff",
@@ -603,23 +604,26 @@ function AivoraServicesSection() {
                 whileHover={{ background: 'rgba(20, 25, 40, 0.9)' }}
               >
                 {/* Vertical rotated text */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    style={{
-                      writingMode: 'vertical-rl',
-                      textOrientation: 'mixed',
-                      transform: 'rotate(180deg)',
-                      color: idx === activeIdx ? '#ffffff' : 'rgba(255,255,255,0.4)',
-                      fontSize: '10px',
-                      fontWeight: 900,
-                      letterSpacing: '0.2em',
-                      textTransform: 'uppercase',
-                      whiteSpace: 'nowrap',
-                      transition: 'color 0.3s',
-                    }}
-                  >
-                    {svc.title}
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center" style={{ gap: '4px', flexDirection: 'row' }}>
+                  {(svc.verticalLines ?? [svc.title]).map((line, li) => (
+                    <div
+                      key={li}
+                      style={{
+                        writingMode: 'vertical-rl',
+                        textOrientation: 'mixed',
+                        transform: 'rotate(180deg)',
+                        color: idx === activeIdx ? '#ffffff' : 'rgba(255,255,255,0.4)',
+                        fontSize: '10px',
+                        fontWeight: 900,
+                        letterSpacing: '0.2em',
+                        textTransform: 'uppercase',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.3s',
+                      }}
+                    >
+                      {line}
+                    </div>
+                  ))}
                 </div>
                 
                 {/* Number indicator at bottom */}
